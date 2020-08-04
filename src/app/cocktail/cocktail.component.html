@@ -1,0 +1,13 @@
+<h1>Liste des boissons disponible</h1>
+<div>
+    Entrez votre Cocktail désiré
+    <input (keyup.enter)="getCocktail(cocktailInput.value)" class="input" #cocktailInput>
+    <button (click)="getCocktail(cocktailInput.value)">OK</button>
+</div>
+<div class="container" *ngIf="cocktail">
+    <div class="cocktail" *ngFor="let cocktail of cocktail.drinks">
+        <a href="{{cocktail.strDrink}}">{{cocktail.strDrink}}</a>
+        <img src="{{cocktail.strDrinkThumb}}" alt="cocktail">
+        {{cocktail.idDrink}}
+    </div>
+</div>
